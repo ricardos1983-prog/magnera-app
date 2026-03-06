@@ -41,7 +41,7 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 900; }
     gap: 16px;
 }
 .magnera-logo {
-    background: linear-gradient(135deg, #f97316, #ea580c);
+    background: linear-gradient(135deg, #e11d48, #be123c);
     padding: 10px 14px;
     border-radius: 10px;
     font-size: 22px;
@@ -77,7 +77,7 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 900; }
 .section-title {
     font-size: 11px; font-weight: 900; color: white;
     text-transform: uppercase; letter-spacing: 2px;
-    border-left: 3px solid #f97316;
+    border-left: 3px solid #e11d48;
     padding-left: 10px;
     margin-bottom: 16px;
 }
@@ -105,7 +105,7 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 900; }
     font-size: 11px; font-weight: 900; color: #94a3b8;
 }
 .waste-badge-red { background: #7f1d1d22; border: 1px solid #ef444433; color: #ef4444; padding: 3px 8px; border-radius: 6px; font-size: 10px; font-weight: 900; }
-.waste-badge-orange { background: #7c2d1222; border: 1px solid #f9731633; color: #f97316; padding: 3px 8px; border-radius: 6px; font-size: 10px; font-weight: 900; }
+.waste-badge-orange { background: #7c2d1222; border: 1px solid #e11d4833; color: #e11d48; padding: 3px 8px; border-radius: 6px; font-size: 10px; font-weight: 900; }
 .waste-badge-green { background: #05150e22; border: 1px solid #10b98133; color: #10b981; padding: 3px 8px; border-radius: 6px; font-size: 10px; font-weight: 900; }
 
 /* Cut Map */
@@ -134,7 +134,7 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 900; }
     display: flex; align-items: center; justify-content: center;
     min-width: 10px;
 }
-.cut-label { font-size: 10px; font-weight: 900; color: #f97316; }
+.cut-label { font-size: 10px; font-weight: 900; color: #e11d48; }
 .cut-count { font-size: 8px; color: rgba(249,115,22,0.6); margin-top: 2px; }
 .cut-waste-label { font-size: 9px; color: rgba(239,68,68,0.5); writing-mode: vertical-rl; }
 
@@ -142,7 +142,7 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 900; }
 .progress-wrap { margin-bottom: 14px; }
 .progress-label { display: flex; justify-content: space-between; font-size: 9px; font-weight: 900; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
 .progress-track { height: 6px; background: #0f172a; border-radius: 99px; border: 1px solid #1e293b; overflow: hidden; }
-.progress-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #dc2626, #f97316); }
+.progress-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #dc2626, #e11d48); }
 
 /* Metric mini cards */
 .metric-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
@@ -154,15 +154,15 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 900; }
 
 /* Table */
 .otif-green { background: #05150e; color: #10b981; border: 1px solid #10b98122; padding: 2px 8px; border-radius: 5px; font-size: 10px; font-weight: 900; }
-.otif-orange { background: #1a0e00; color: #f97316; border: 1px solid #f9731622; padding: 2px 8px; border-radius: 5px; font-size: 10px; font-weight: 900; }
+.otif-orange { background: #1a0e00; color: #e11d48; border: 1px solid #e11d4822; padding: 2px 8px; border-radius: 5px; font-size: 10px; font-weight: 900; }
 .otif-red { background: #1a0000; color: #ef4444; border: 1px solid #ef444422; padding: 2px 8px; border-radius: 5px; font-size: 10px; font-weight: 900; }
 
 /* Divider */
-.orange-divider { height: 2px; background: linear-gradient(90deg, #f97316, transparent); border-radius: 99px; margin: 24px 0; }
+.orange-divider { height: 2px; background: linear-gradient(90deg, #e11d48, transparent); border-radius: 99px; margin: 24px 0; }
 
 /* Simulate Button */
 .stButton > button {
-    background: linear-gradient(135deg, #f97316, #ea580c) !important;
+    background: linear-gradient(135deg, #e11d48, #be123c) !important;
     color: white !important;
     font-weight: 900 !important;
     font-family: 'Space Grotesk', sans-serif !important;
@@ -466,7 +466,7 @@ if st.session_state.simulated and st.session_state.combinations:
 
     diff_color  = "#10b981" if diff_kg >= 0 else "#ef4444"
     diff_sign   = "+" if diff_kg >= 0 else ""
-    slu_color   = "#10b981" if weighted_slu < 1.0 else ("#f97316" if weighted_slu < 1.3 else "#ef4444")
+    slu_color   = "#10b981" if weighted_slu < 1.0 else ("#e11d48" if weighted_slu < 1.3 else "#ef4444")
     acc_color   = "#10b981" if accuracy >= 98 else "#ef4444"
 
     st.markdown(f"""
@@ -504,7 +504,7 @@ if st.session_state.simulated and st.session_state.combinations:
         "SLU (%)": [round(safe_num(c["wastePercentage"]), 2) for c in combos]
     })
     chart_data_indexed = chart_data.set_index("Conjugação")
-    st.bar_chart(chart_data_indexed, color="#f97316", height=220)
+    st.bar_chart(chart_data_indexed, color="#e11d48", height=220)
 
     st.markdown('<div class="orange-divider"></div>', unsafe_allow_html=True)
 
@@ -614,7 +614,7 @@ if st.session_state.simulated and st.session_state.combinations:
                     <div style="font-size:11px;font-weight:900;color:#e2e8f0">Largura Líquida: {net_w} mm</div>
                     <div style="font-size:9px;color:#475569">Refile: {arr} mm</div>
                   </div>
-                  <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#f97316">{cnt}x</div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#e11d48">{cnt}x</div>
                   <div style="text-align:right">
                     <div style="font-size:11px;font-weight:700;color:#94a3b8">{w} mm</div>
                     <div style="font-size:8px;color:#334155;text-transform:uppercase">Largura Bruta</div>
